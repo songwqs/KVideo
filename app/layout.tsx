@@ -8,7 +8,7 @@ import { TVNavigationInitializer } from "@/components/TVNavigationInitializer";
 import { Analytics } from "@vercel/analytics/react";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { PasswordGate } from "@/components/PasswordGate";
-import { siteConfig } from "@/lib/config/site-config";
+import { siteConfig, SITE_ICON_PATH } from "@/lib/config/site-config";
 import { AdKeywordsInjector } from "@/components/AdKeywordsInjector";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { ScrollPositionManager } from "@/components/ScrollPositionManager";
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   title: siteConfig.title,
   description: siteConfig.description,
   icons: {
-    icon: '/icon.png',
+    icon: SITE_ICON_PATH,
   },
 };
 
@@ -89,7 +89,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="KVideo" />
-        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="apple-touch-icon" href={SITE_ICON_PATH} />
         {/* Theme Color (for browser address bar) */}
         <meta name="theme-color" content="#000000" />
         {/* Mobile viewport */}

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { Icons } from '@/components/ui/Icon';
-import { siteConfig } from '@/lib/config/site-config';
+import { siteConfig, SITE_ICON_PATH } from '@/lib/config/site-config';
 import { getSession, clearSession, hasPermission, type AuthSession } from '@/lib/store/auth-store';
 import { useRuntimeFeatures } from '@/components/RuntimeFeaturesProvider';
 import { LogOut } from 'lucide-react';
@@ -45,10 +45,11 @@ export function Navbar({ onReset, isPremiumMode = false }: NavbarProps) {
                         >
                             <div className="w-8 h-8 sm:w-10 sm:h-10 relative flex items-center justify-center flex-shrink-0">
                                 <Image
-                                    src="/icon.png"
+                                    src={SITE_ICON_PATH}
                                     alt={siteConfig.name}
                                     width={40}
                                     height={40}
+                                    unoptimized
                                     className="object-contain"
                                 />
                             </div>
